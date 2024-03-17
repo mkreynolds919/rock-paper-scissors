@@ -6,13 +6,6 @@ function getComputerChoice() {
     return computerChoice;
 }
 
-function choiceValid(choice) {
-    if (choice in choices) {
-        return true;
-    } else {
-        console.log("Selection must be Rock, Paper, or Scissors");
-    }
-}
 
 
 function getPlayerChoice() {

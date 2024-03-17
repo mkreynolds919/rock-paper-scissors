@@ -54,7 +54,7 @@ function playRound(playerChoice, computerChoice) {
 
 let playerChoice = getPlayerChoice();
 let computerChoice = getComputerChoice();
-console.log(getPlayerChoice(), getComputerChoice());
+playRound(playerChoice, computerChoice);
 
 
 

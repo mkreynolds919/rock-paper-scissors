@@ -79,7 +79,7 @@ function playGame() {
 
 let playerChoice = getPlayerChoice();
 let computerChoice = getComputerChoice();
-playRound(playerChoice, computerChoice);
+playGame();
 
 
 

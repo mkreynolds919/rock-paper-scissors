@@ -24,31 +24,39 @@ function playRound(playerChoice, computerChoice) {
             switch (computerChoice) {
                 case "ROCK":
                     console.log("Rock and Rock! You tie!");
+                    return;
                 case "SCISSORS":
                     console. log("Rock beats Scissors! You win!");
+                    return;
                 case "PAPER":
                     console.log("Paper beats Rock! You lose!");
+                    return;
             }
         case "PAPER":
             switch (computerChoice) {
                 case "ROCK":
                     console.log("Paper beats Rock! You win!");
+                    return;
                 case "SCISSORS":
                     console. log("Scissors beats Paper! You lose!");
+                    return;
                 case "PAPER":
                     console.log("Paper and Paper! You tie!");
+                    return;
             }
-
         case "SCISSORS":
             switch (computerChoice) {
                 case "ROCK":
                     console.log("Rock beats Scissors! You lose!");
+                    return;
                 case "SCISSORS":
-                    console. log("Scissors and Scissors! You lose!");
+                    console. log("Scissors and Scissors! You Tie!");
+                    return;
                 case "PAPER":
                     console.log("Scissors beats Paper! You win!");
+                    return;
+            }
     }
-}
 }
 
 

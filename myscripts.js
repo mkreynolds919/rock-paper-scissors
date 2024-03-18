@@ -29,7 +29,7 @@ function playRound(playerChoice, computerChoice) {
                     console.log("Rock and Rock! You tie!");
                     return;
                 case "SCISSORS":
-                    console. log("Rock beats Scissors! You win!");
+                    console.log("Rock beats Scissors! You win!");
                     playerScore += 1;
                     return;
                 case "PAPER":
@@ -44,7 +44,7 @@ function playRound(playerChoice, computerChoice) {
                     playerScore += 1;
                     return;
                 case "SCISSORS":
-                    console. log("Scissors beats Paper! You lose!");
+                    console.log("Scissors beats Paper! You lose!");
                     computerScore += 1;
                     return;
                 case "PAPER":
@@ -58,7 +58,7 @@ function playRound(playerChoice, computerChoice) {
                     computerScore += 1;
                     return;
                 case "SCISSORS":
-                    console. log("Scissors and Scissors! You Tie!");
+                    console.log("Scissors and Scissors! You Tie!");
                     return;
                 case "PAPER":
                     console.log("Scissors beats Paper! You win!");
@@ -70,7 +70,7 @@ function playRound(playerChoice, computerChoice) {
 
 function playGame() {
     for (let i = 1; i <= 5; i++) {
-        playRound(playerChoice, computerChoice);
+        playRound(getPlayerChoice(), getComputerChoice());
         console.log(`Score:\n Player - ${playerScore}\n Computer - ${computerScore}`)
     }
 }

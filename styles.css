@@ -1,0 +1,17 @@
+body {
+    font-size: 12px;
+    font-family: "Times New Roman", sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+
+.header-container {
+    margin: auto;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}

@@ -4,64 +4,57 @@ const choices = ["ROCK", "PAPER", "SCISSORS"];
 let computerScore = 0;
 let playerScore = 0;
 
+const buttons = document.querySelectorAll(".button-container button");
+const result = document.querySelector(".result");
+const score = document.querySelector(".score-container");
+const reset = document.querySelector("#reset");
+
 function getComputerChoice() {
     let computerChoice = choices[Math.floor(Math.random() * choices.length)].toUpperCase();
     return computerChoice;
 }
-
-
-
-function getPlayerChoice() {
-    let playerChoice = prompt("What would you like to choose?").trim().toUpperCase(); 
-    if (choices.includes(playerChoice)) {
-        return playerChoice;
-    } else {
-        console.log("Selection must be Rock, Paper, or Scissors");
-    }
-}
-
 
 function playRound(playerChoice, computerChoice) {
     switch (playerChoice) {
         case "ROCK":
             switch (computerChoice) {
                 case "ROCK":
-                    console.log("Rock and Rock! You tie!");
+                    result.textContent = "Rock and Rock! You tie!";
                     return;
                 case "SCISSORS":
-                    console.log("Rock beats Scissors! You win!");
+                    result.textContent = "Rock beats Scissors! You win!";
                     playerScore += 1;
                     return;
                 case "PAPER":
-                    console.log("Paper beats Rock! You lose!");
+                    result.textContent = "Paper beats Rock! You lose!";
                     computerScore += 1;
                     return;
             }
         case "PAPER":
             switch (computerChoice) {
                 case "ROCK":
-                    console.log("Paper beats Rock! You win!");
+                    result.textContent = "Paper beats Rock! You win!";
                     playerScore += 1;
                     return;
                 case "SCISSORS":
-                    console.log("Scissors beats Paper! You lose!");
+                    result.textContent = "Scissors beats Paper! You lose!";
                     computerScore += 1;
                     return;
                 case "PAPER":
-                    console.log("Paper and Paper! You tie!");
+                    result.textContent = "Paper and Paper! You tie!";
                     return;
             }
         case "SCISSORS":
             switch (computerChoice) {
                 case "ROCK":
-                    console.log("Rock beats Scissors! You lose!");
+                    result.textContent = "Rock beats Scissors! You lose!";
                     computerScore += 1;
                     return;
                 case "SCISSORS":
-                    console.log("Scissors and Scissors! You Tie!");
+                    result.textContent = "Scissors and Scissors! You Tie!";
                     return;
                 case "PAPER":
-                    console.log("Scissors beats Paper! You win!");
+                    result.textContent = "Scissors beats Paper! You win!";
                     playerScore += 1;
                     return;
             }
@@ -77,9 +70,33 @@ function playGame() {
 
 
 
-let playerChoice = getPlayerChoice();
-let computerChoice = getComputerChoice();
-playGame();
+
+buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+        playRound(button.id, getComputerChoice());
+        if (playerScore <= 4 && computerScore <=4) {
+            score.textContent = `Score:\n Player - ${playerScore}\n Computer - ${computerScore}`;
+        } else {
+            if (playerScore > computerScore) {
+                score.textContent = "YOU WIN!";
+            } else {
+                score.textContent = "COMPUTER WINS!";
+            }
+        }
+    });
+});
+
+reset.addEventListener("click", () => {
+    playerScore = 0;
+    computerScore = 0;
+    result.textContent = "";
+    score.textContent = `Score:\n Player - ${playerScore}\n Computer - ${computerScore}`;
+});
+
+
+
+
+
 
 
 
